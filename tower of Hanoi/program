@@ -1,0 +1,19 @@
+#include <stdio.h>
+void TOH(int n, int a,int b,int c)
+{
+    if (n ==1)
+    {
+        printf("\n Move disk 1 from %d to  %d", a, c);
+        return;
+    }
+    TOH(n-1, a,c,b);
+    printf("\n Move disk %d from  %d to  %d", n, a,c);
+    TOH(n-1, b,a,c);
+}
+ 
+int main()
+{
+    int n = 3;
+    TOH(n, 1,2,3);  
+    return 0;
+}
